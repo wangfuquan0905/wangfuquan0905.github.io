@@ -60,10 +60,33 @@
 .robot-grid .robot-card:nth-of-type(3) { transform: translate(-6rem, -7.5rem); }
 .robot-grid .robot-card:nth-of-type(3):hover { transform: translate(-6rem, -7.5rem) translateY(-2px); }
 
-/* 窄屏堆叠 */
+/* 窄屏堆叠（修复重叠与拉伸） */
 @media (max-width: 900px) {
-  .robot-grid { grid-template-columns: 1fr; }
-  .robot-card.tall { grid-row: auto; }
+  .robot-grid {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+
+  /* 取消所有位移/缩放，恢复正常流布局 */
+  .robot-card,
+  .robot-card.tall,
+  .robot-grid .robot-card:nth-of-type(2),
+  .robot-grid .robot-card:nth-of-type(3) {
+    transform: none !important;
+  }
+  .robot-card.tall { 
+    grid-row: auto; 
+    transform-origin: initial; 
+  }
+
+  /* 避免图片被强行拉伸 */
+  .robot-card .robot-media { aspect-ratio: auto; }
+  .robot-card .robot-media img {
+    width: 100%;
+    height: auto;
+    object-fit: cover;   /* 比 fill 更自然；若必须不裁剪可改回 fill */
+    display: block;
+  }
 }
 
 /* ========== Selection & Links (light) ========== */
