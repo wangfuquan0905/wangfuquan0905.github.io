@@ -27,10 +27,10 @@ hide_description: true
 
           <div class="pub-meta" style="flex:1;">
             <p style="margin:0; font-weight:600;">{{ p.title }}</p>
-            <p style="margin:0.25rem 0; color:#444; line-height:1.4;">
+            <p class="pub-authors" style="margin:0.25rem 0; line-height:1.4;">
               {{ p.authors | replace: "Fuquan Wang", "<strong>Fuquan Wang</strong>" }}
             </p>
-            <p style="margin:0; color:#777; font-style:italic;">
+            <p class="pub-venue">
               {{ p.venue }}{% if p.year %}, {{ p.year }}{% endif %}
             </p>
           </div>

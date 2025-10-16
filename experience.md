@@ -10,7 +10,7 @@ permalink: /experience/
   <span style="
     font-family: 'Great Vibes', cursive;
     font-size: 1.6rem;
-    color: #4a4a4a;
+    color: #888888;
     letter-spacing: 0.5px;
     display: inline-block;
   ">
