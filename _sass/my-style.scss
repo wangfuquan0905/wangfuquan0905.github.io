@@ -12,3 +12,119 @@
     margin: 1rem 0;
   }
 }
+/* --- News timeline styles --- */
+.timeline {
+  background: #fafafa;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  padding: 1.25rem;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+}
+
+.timeline-item {
+  margin-bottom: 0.85rem;
+  padding-bottom: 0.85rem;
+  border-bottom: 1px dashed #ccc;
+  line-height: 1.55;
+}
+
+.timeline-item:last-child { border-bottom: none; }
+
+.timeline-date {
+  color: #777;
+  font-size: 0.9rem;
+  font-weight: 700;
+  margin-right: 0.4rem;
+  white-space: nowrap;
+}
+
+.pub-item:hover {
+  background: #fafafa;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+  transform: translateY(-2px);
+}
+.pub-list::after {
+  display: none !important;
+  content: none !important;
+}
+
+
+/* hide hydejack loader */
+.hy-push-state .loading,
+.hy-push-state .loader,
+.hy-push-state .hy-fade::after {
+  display: none !important;
+  opacity: 0 !important;
+  visibility: hidden !important;
+}
+.page__title {
+  font-size: 2rem !important;
+  font-weight: 700 !important;
+  margin-bottom: 1rem !important;
+}
+
+
+
+/* --- Robots grid: 左列竖、右列上下 --- */
+.robot-grid {
+  display: grid;
+  grid-template-columns: minmax(280px, 520px) 1fr;
+  gap: 1.5rem;
+  align-items: start;          /* 不把右侧卡片拉伸到整行高度 */
+}
+
+/* 卡片 */
+.robot-card {
+  display: block;
+  text-decoration: none;
+  color: inherit;
+  border-radius: 12px;
+  overflow: hidden;
+  background: #fff;
+  box-shadow: 0 2px 12px rgba(0,0,0,.08);
+  transition: transform .25s ease, box-shadow .25s ease;
+}
+.robot-card:hover { transform: translateY(-2px); box-shadow: 0 6px 18px rgba(0,0,0,.16); }
+
+.robot-card span {
+  display: block;
+  padding: .6rem .8rem;
+  text-align: center;
+  font-weight: 700;
+}
+
+/* 容器用比例，不固定高度 */
+.robot-card .robot-media { width: 100%; height: auto; overflow: hidden; }
+
+/* 右列两张：16:9，图片铺满且不裁切（允许形变） */
+.robot-card:not(.tall) .robot-media { aspect-ratio: 16 / 9; }
+.robot-card:not(.tall) .robot-media img {
+  width: 100%;
+  height: 100%;
+  object-fit: fill;            /* ★ 不裁切、无留白，允许拉伸 */
+  display: block;
+}
+
+/* 左列 Tiago：3:4，图片同样不裁切（允许形变） */
+.robot-card.tall .robot-media { aspect-ratio: 3 / 4; }
+.robot-card.tall .robot-media img {
+  width: 100%;
+  height: 100%;
+  object-fit: fill;            /* ★ 不裁切、无留白 */
+  display: block;
+}
+.robot-card.tall {
+  transform: scale(0.85);          /* 缩小 90% */
+  transform-origin: top center;   /* 缩放中心（可以改 left/right） */
+}
+
+/* 布局位置：Tiago 占两行；右上 Realman；右下 Rizon */
+.robot-card.tall { grid-column: 1; grid-row: 1 / span 2; }
+.robot-grid .robot-card:nth-of-type(2) { grid-column: 2; grid-row: 1; } /* Realman */
+.robot-grid .robot-card:nth-of-type(3) { grid-column: 2; grid-row: 2; } /* Rizon */
+
+/* 窄屏堆叠 */
+@media (max-width: 900px) {
+  .robot-grid { grid-template-columns: 1fr; }
+  .robot-card.tall { grid-row: auto; }
+}
