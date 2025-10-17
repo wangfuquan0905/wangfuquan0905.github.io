@@ -1,5 +1,93 @@
 <!-- Add HTML tags here to be included in the head. You can delete the below: -->
 <link rel="dns-prefetch" href="https://assets.gumroad.com">
+<style>
+  :root { --card-border: color-mix(in srgb, currentColor 18%, transparent); }
+  @media (prefers-color-scheme: dark) {
+    :root { --card-border: color-mix(in srgb, currentColor 22%, transparent); }
+  }
+  .pub-item { border: 1px solid var(--card-border); }
+</style>
+<style>
+  /* 首帧就可用的主题感知颜色（无任何具体色值） */
+  :root{
+    --surface-bg:     color-mix(in srgb, currentColor 5%,  transparent);
+    --surface-border: color-mix(in srgb, currentColor 20%, transparent);
+    --divider:        color-mix(in srgb, currentColor 28%, transparent);
+    --muted:          color-mix(in srgb, currentColor 55%, transparent);
+  }
+  @media (prefers-color-scheme: dark){
+    :root{
+      --surface-bg:     color-mix(in srgb, currentColor 7%,  transparent);
+      --surface-border: color-mix(in srgb, currentColor 26%, transparent);
+      --divider:        color-mix(in srgb, currentColor 35%, transparent);
+      --muted:          color-mix(in srgb, currentColor 65%, transparent);
+    }
+  }
+
+  /* News timeline（首帧也生效） */
+  .timeline{
+    background: var(--surface-bg);
+    border: 1px solid var(--surface-border);
+    border-radius: 10px;
+    padding: 1.25rem;
+    box-shadow: 0 2px 6px rgba(0,0,0,.05);
+  }
+  @media (prefers-color-scheme: dark){
+    .timeline{ box-shadow: 0 2px 6px rgba(0,0,0,.25); }
+  }
+
+  .timeline-item{
+    margin-bottom: .85rem;
+    padding-bottom: .85rem;
+    border-bottom: 1px dashed var(--divider);
+    line-height: 1.55;
+  }
+  .timeline-item:last-child{ border-bottom: 0; }
+
+  .timeline-date{
+    color: var(--muted);
+    font-size: .9rem;
+    font-weight: 700;
+    margin-right: .4rem;
+    white-space: nowrap;
+  }
+</style>
+
+<style>
+  /* theme-aware defaults — ensures first frame looks right */
+  :root{
+    --surface-card-bg:     color-mix(in srgb, currentColor 5%,  transparent);
+    --surface-card-shadow: rgba(0,0,0,.08);
+  }
+  @media (prefers-color-scheme: dark){
+    :root{
+      --surface-card-bg:     color-mix(in srgb, currentColor 7%,  transparent);
+      --surface-card-shadow: rgba(0,0,0,.35);
+    }
+  }
+
+  .robot-card{
+    display: block;
+    text-decoration: none;
+    color: inherit;
+    border-radius: 12px;
+    overflow: hidden;
+    background: var(--surface-card-bg);
+    box-shadow: 0 2px 12px var(--surface-card-shadow);
+    transition: transform .25s ease, box-shadow .25s ease;
+  }
+  .robot-card:hover{
+    transform: translateY(-2px);
+    box-shadow: 0 6px 18px color-mix(in srgb, currentColor 25%, transparent);
+  }
+  .robot-card span{
+    display: block;
+    padding: .6rem .8rem;
+    text-align: center;
+    font-weight: 700;
+  }
+</style>
+
 <script type="module">
   const loadJS = x => new Promise(r => window.loadJS(x).addEventListener('load', r));
 

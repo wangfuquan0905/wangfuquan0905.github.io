@@ -18,7 +18,7 @@ hide_description: true
   <div class="pub-list" style="margin-top:1.5rem;">
     {% for p in items %}
       <a href="{{ p.link | default: p.url | relative_url }}" target="_blank" style="text-decoration:none; color:inherit;">
-        <div class="pub-item" style="display:flex; align-items:flex-start; margin-bottom:1.5rem; gap:1rem; border-radius:10px; padding:0.75rem; transition:all 0.2s ease; border:1px solid #eee;">
+        <div class="pub-item" style="display:flex; align-items:flex-start; margin-bottom:1.5rem; gap:1rem; border-radius:10px; padding:0.75rem; transition:all 0.2s ease;">
           {% if p.image %}
             <div class="pub-thumb" style="flex:0 0 200px;">
               <img src="{{ p.image | relative_url }}" alt="{{ p.title }}" style="width:100%; border-radius:8px;">
