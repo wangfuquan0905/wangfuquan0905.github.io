@@ -73,5 +73,18 @@ hide_description: true
 
 </div>
 
-
 ---
+
+
+<section id="visitors-globe" style="margin-top:2rem">
+  <div style="display:flex;justify-content:center;align-items:center;
+              border-radius:12px;padding:1rem;">
+    <!-- 控制球体大小 -->
+    <div style="width:300px;height:300px;max-width:90vw;">
+      <script type="text/javascript" id="mmvst_globe"
+        src="//mapmyvisitors.com/globe.js?d=Z5y04Z-eCtGSfnuvFDB4y5gRbyxMvXy2thDsh94gnI">
+      </script>
+    </div>
+  </div>
+</section>
+
