@@ -81,9 +81,7 @@ hide_description: true
               border-radius:12px;padding:1rem;">
     <!-- 控制球体大小 -->
     <div style="width:300px;height:300px;max-width:90vw;">
-      <script type="text/javascript" id="mmvst_globe"
-        src="//mapmyvisitors.com/globe.js?d=Z5y04Z-eCtGSfnuvFDB4y5gRbyxMvXy2thDsh94gnI">
-      </script>
+      <script type="text/javascript" id="mmvst_globe" src="//mapmyvisitors.com/globe.js?d=8rRYs_ITZSK2puSnuWaxTlNCmqqJLx0xyATZjxeYN18"></script>
     </div>
   </div>
 </section>
