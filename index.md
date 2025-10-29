@@ -76,5 +76,5 @@ hide_description: true
 ---
 
 
-<script type='text/javascript' id='mapmyvisitors' src='https://mapmyvisitors.com/map.js?cl=f9f9f9&w=a&t=tt&d=R6uqYAus_HTKtYRvFPAuDStb6IKIxNOI7PKXgFWy_d8&cmo=8c7dd5&cmn=18dc18&co=8eb5d5'></script>
+<script type="text/javascript" id="clustrmaps" src="//clustrmaps.com/map_v2.js?d=Cjq4cgl5y-gNDRQnQGx_NMbOal7EaV-JmOLTZtZNsiI&cl=ffffff&w=a"></script>
 
